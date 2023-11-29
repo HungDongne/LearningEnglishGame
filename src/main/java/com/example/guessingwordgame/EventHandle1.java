@@ -22,6 +22,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
@@ -40,6 +41,14 @@ public class EventHandle1 implements Initializable {
     public void startGame(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        try {
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/guessingwordgame/GameIcon.png"))));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //Không cho phép kéo dãn cửa sổ
+        stage.setResizable(false);
+        stage.setTitle("Learning English game");
         stage.setScene(new Scene(root));
         stage.show();
     }

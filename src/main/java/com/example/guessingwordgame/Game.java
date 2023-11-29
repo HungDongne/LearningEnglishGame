@@ -38,7 +38,7 @@ import java.net.URI;
 import java.util.concurrent.TimeUnit;
 
 public class Game implements Initializable {
-    public static final String pathDataGame = "C:\\Users\\Admin\\Desktop\\MainCode\\Java\\Java\\GuessingWordGame\\src\\main\\resources\\com\\example\\guessingwordgame\\dataGame\\words.txt";
+    public static final String pathDataGame = "src/main/resources/com/example/guessingwordgame/dataGame/words.txt";
     int scoreCount;
     @FXML
     Label scoreLabel;
@@ -116,8 +116,8 @@ public class Game implements Initializable {
         guessingText.setFill(Color.BLACK);
         guessingText.setFont(Font.font("Fira Code Light", FontWeight.LIGHT, 50));
         try {
-            fullHeartImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/GuessingWordGame/heart.png")));
-            halfHeartImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/GuessingWordGame/half_heart.png")));
+            fullHeartImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/guessingwordgame/heart.png")));
+            halfHeartImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/guessingwordgame/half_heart.png")));
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -141,7 +141,7 @@ public class Game implements Initializable {
 
     public void reloadWord(int index) {
         lifeRefill();
-        String pathImage = "C:\\Users\\Admin\\Desktop\\MainCode\\Java\\Java\\GuessingWordGame\\src\\main\\resources\\com\\example\\guessingwordgame\\dataGame\\"
+        String pathImage = "src/main/resources/com/example/guessingwordgame/dataGame/"
                 + Game.spreadWord_getWord(words.get(index)) + ".jpg";
         try {
             File file = new File(pathImage);
