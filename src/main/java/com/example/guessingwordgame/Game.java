@@ -187,7 +187,7 @@ public class Game implements Initializable {
                 guessingWord = replaceCharAt(guessingWord, i, charClicked);
                 guessingText.setText(guessingWord);
             }
-            if (tmpList.size() == 0) {
+            if (tmpList.isEmpty()) {
                 lifeRemain--;
                 updateImageLife();
             }
@@ -243,7 +243,7 @@ public class Game implements Initializable {
     public void returnBack(Event event) {
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Scene1.fxml")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

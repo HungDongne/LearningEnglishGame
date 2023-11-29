@@ -39,7 +39,7 @@ public class EventHandle1 implements Initializable {
     Button title;
 
     public void startGame(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Game.fxml")));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         try {
             stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/guessingwordgame/GameIcon.png"))));
